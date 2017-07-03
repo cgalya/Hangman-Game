@@ -1,3 +1,18 @@
+body {
+	background-image: url("topography.png");
+	color: #ffffff;
+}
+
+#img {
+	display: block;
+	margin: 0 auto;
+}
+
+.jumbotron {
+	background: #2ed5f5;
+	font-family: 'Dosis', sans-serif;
+	padding-top: 30px;
+}
 
 #my-word {
   margin: 0;
@@ -11,8 +26,8 @@
   list-style: none;
   margin: 0;
   display: inline-block;
-  padding: 0 10px;
-  font-size:1.6em;
+  padding: 0 8px;
+  font-size: 20px;
 }
 
 #incorrect {
@@ -30,4 +45,9 @@
   padding: 0 10px;
   font-size:1.6em;
   text-transform: uppercase;
+  line-height: 40px;
+}
+
+#start {
+	font-size: 15px;
 }
