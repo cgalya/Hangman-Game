@@ -1,7 +1,7 @@
 var words = ["narwhal", "humpback", "orca", "blue", "beluga", "bowhead", "minke"];
 var word = words[Math.floor(Math.random() * words.length)];
 var guesses = [];
-var wordHolder = document.getElementById('hold');
+var wordSpot = document.getElementById('spot');
 var correct = document.createElement('ul');
 var lives = 15;
 var showLives = document.getElementById("mylives");
@@ -9,29 +9,31 @@ showLives.innerHTML = "You have " + lives + " guesses remaining";
 var rightGuess = [];
 document.createElement("img")
 var snd = new Audio("assets/images/whalesounds.wav")
+var wins = 0;
+var showWins = document.getElementById("mywins");
+showWins.innerHTML = "Wins: " + wins;
 
-   result = function () {
- 
+   var createWord = function () {
     for (var i = 0; i < word.length; i++) {
-      correct.setAttribute('id', 'my-word');
+      correct.setAttribute('id', 'the-word');
       var guess = document.createElement('li');
+      guess.setAttribute('id', 'guess');
       if (word[i] === "-") {
         guess.innerHTML = " ";
       } else {
         guess.innerHTML = "_";
-      }
+        }
       guesses.push(guess);
-      wordHolder.appendChild(correct);
+      wordSpot.appendChild(correct);
       correct.appendChild(guess);
+
+     }
+    console.log(word);   
     }
-    console.log(word);
-    
-    }
-
-    result();
 
 
 
+var play = function() {
 document.addEventListener('keydown', function(event){
   var charTyped = event.key;
   var incorrect = document.getElementById('incorrect');
@@ -48,11 +50,11 @@ document.addEventListener('keydown', function(event){
     showLives.innerHTML = "You have " + lives + " guesses remaining";
     incorrect.appendChild(listLetters);
     listLetters.innerHTML = charTyped;
-    }
+  }
   if (lives === 0) {
     document.getElementById("win").innerHTML = "Game Over! Ready to play again?"
     setTimeout(function() {
-      location.reload();},5000);
+      reset();},2000);
   }
   if (rightGuess.length === word.length) {
     if (word === "narwhal") {
@@ -78,13 +80,28 @@ document.addEventListener('keydown', function(event){
     }
     document.getElementById("win").innerHTML = "The whales cheer for you!!!"
     snd.play();
+    wins += 1;
+    showWins.innerHTML = "Wins: " + wins;
     setTimeout(function() {
-      location.reload();},8000);
+      reset();},2000);
     
   }
 })
+}
+
+var reset = function() {
+  lives = 15
+  showLives.innerHTML = "You have " + lives + " guesses remaining";
+  document.getElementById("the-word").innerHTML = "";
+  document.getElementById("win").innerHTML = "";
+  document.getElementById("incorrect").innerHTML = "";
+  createWord();
+  play();
+}
 
 
+createWord();
+play();
 
 
 
