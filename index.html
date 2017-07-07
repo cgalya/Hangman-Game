@@ -22,24 +22,30 @@
 
       <div class="jumbotron">
       	<div class="col-lg-6" id="left">
-        	<p id="start">*Press any key to get started*</p>
-        	<h2>Current Whale</h2>
+        	<p id="start"></p>
+        	<h2 id="currentWhale"></h2>
          	<div id="spot"></div>
          	<h2 id="win"></h2>
         </div>
     		<div class="col-lg-6" id="right">
     			<p id="mywins"></p>
     			<p id="mylives"></p> 
-					<p>Letters Already Guessed</p>
+					<p id = "letGuessed"></p>
     			<ul id="incorrect"></ul>
     		</div>
       </div>
 
       <div class="row marketing text-center">
-        <div class="col-lg-6 col-lg-offset-2" id="pics">
+        <div class="col-lg-12" id="pics">
           <div id="img"></div>
         </div>
       </div>
+
+			<div id="myModal" class="modal">
+				<div class="modal-content">
+					<p>Press any key to get started!</p>
+				</div>
+			</div>
 
     </div>
    

@@ -3,15 +3,11 @@ body {
 	color: #ffffff;
 }
 
-#img {
-	display: block;
-	margin: 0 auto;
-}
-
 .jumbotron {
 	background: #2ed5f5;
 	font-family: 'Dosis', sans-serif;
 	padding-top: 30px;
+	border: solid 0.5px #b9b7b7;
 }
 
 #left {
@@ -30,7 +26,7 @@ body {
   list-style: none;
   display: inline-block;
   padding: 0 8px;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 #incorrect {
@@ -47,7 +43,22 @@ body {
 }
 
 #start {
-	font-size: 15px;
+	font-size: 20px;
 }
 
+.modal {
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #2ed5f5;
+    margin: 12% auto; 
+    padding: 60px 20px;
+    border: 1px solid #888;
+    width: 51%; 
+    height: 35%;
+    font-size: 35px;
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+}
 
