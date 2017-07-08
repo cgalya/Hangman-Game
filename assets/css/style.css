@@ -18,7 +18,7 @@ body {
 	padding-right: 0px;
 }
 
-#guess {
+#underscore {
   display: inline-block;
   padding: 10px;
   font-size: 25px;
@@ -40,6 +40,10 @@ body {
 
 #start {
 	font-size: 20px;
+}
+
+#img {
+  border-radius: 6px;
 }
 
 .modal {
