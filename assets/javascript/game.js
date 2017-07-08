@@ -31,7 +31,6 @@ var start = function() {
   //used for creating the word guessing areas
   var guesses = [];
   var wordSpot = document.getElementById('spot');
-  var correct = document.createElement('ul');
   var rightGuess = [];
 
   //sets up life counter
@@ -49,13 +48,12 @@ var start = function() {
   var createWord = function() {
     word = words[Math.floor(Math.random() * words.length)];
     for (var i = 0; i < word.length; i++) {
-      correct.setAttribute('id', 'the-word');
-      var guess = document.createElement('li');
+      var guess = document.createElement('div');
       guess.setAttribute('id', 'guess');
       guess.innerHTML = "_";
       guesses.push(guess);
-      wordSpot.appendChild(correct);
-      correct.appendChild(guess);
+      wordSpot.appendChild(guess);
+      
     }
     console.log(word);   
   }
@@ -64,7 +62,7 @@ var start = function() {
   document.addEventListener('keydown', function(event){
     var charTyped = event.key;
     var incorrect = document.getElementById('incorrect');
-    var listLetters = document.createElement('li');
+    var listLetters = document.createElement('div');
     for (var i = 0; i < word.length; i++) {
       if (word[i] === charTyped) {
         guesses[i].innerHTML = charTyped;
@@ -138,7 +136,7 @@ var start = function() {
     showLives.innerHTML = "You have " + lives + " guesses remaining";
     guesses = [];
     rightGuess = [];
-    document.getElementById("the-word").innerHTML = "";
+    document.getElementById("spot").innerHTML = "";
     document.getElementById("win").innerHTML = "";
     document.getElementById("incorrect").innerHTML = "";
     createWord();

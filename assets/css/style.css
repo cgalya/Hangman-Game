@@ -18,23 +18,19 @@ body {
 	padding-right: 0px;
 }
 
-#the-word {
-  padding: 0;
-}
-
-#the-word li {
-  list-style: none;
+#guess {
   display: inline-block;
-  padding: 0 8px;
+  padding: 10px;
   font-size: 25px;
+  padding: 0px 8px 0px 8px;
 }
 
 #incorrect {
   padding: 0;
 }
 
-#incorrect li { 
-  list-style: none;
+#incorrect div { 
+
   display: inline-block;
   padding: 0 10px;
   font-size: 25px;
